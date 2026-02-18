@@ -30,4 +30,12 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
+    'mailhog' => [
+        'url' => env('MAILHOG_URL', 'http://localhost:8025'),
+    ],
+
+    'stripe' => [
+    'key' => env('STRIPE_KEY'),
+    'secret' => env('STRIPE_SECRET'),
+    ],
 ];

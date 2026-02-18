@@ -1,0 +1,124 @@
+.index-content {
+    margin: 0 auto;
+}
+
+.index-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.index-menu-wrapper {
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 70px;
+    width: 100vw;
+    margin-left: calc(50% - 50vw);
+    position: sticky;
+    top: 70px;
+    z-index: 900;
+    background-color: #fff;
+}
+
+.index-menu {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 30px 50px 10px;
+    display: flex;
+    gap: 70px;
+}
+
+.index-menu__link-text {
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* 共通状態 */
+.index-menu__link-text.is-recommend.is-active {
+    color: #000;
+}
+
+.index-menu__link-text.is-recommend.is-inactive {
+    color: #aaa;
+}
+
+/* マイリスト */
+.index-menu__link-text.is-like.is-active {
+    color: #e60023;
+}
+
+.index-menu__link-text.is-like.is-inactive {
+    color: rgba(230, 0, 35, 0.4);
+}
+
+.index-items {
+    max-width: 1400px;
+    padding: 0 20px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 50px;
+}
+
+.index-items__card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+}
+
+.index-items__card-link:hover {
+    opacity: 0.9;
+}
+
+.index-items__card-image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #666;
+    overflow: hidden;
+    position: relative;
+}
+
+.index-items__card-image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+    z-index: 0;
+}
+
+.index-items__card-text {
+    width: 100%;
+    margin-top: 5px;
+}
+
+.index-items__card-image.is-sold::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    opacity: 1;
+    transition: opacity 0.2s;
+    z-index: 1;
+}
+
+.index-items__sold-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: #fff;
+    font-weight: bold;
+    font-size: 34px;
+    letter-spacing: 2px;
+    
+}
+

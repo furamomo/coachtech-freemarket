@@ -1,0 +1,293 @@
+.show__content {
+    margin: 0 auto;
+}
+
+.show__inner {
+    margin: 50px auto;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 80px;
+    max-width: 1000px;
+}
+
+.show__left {
+    width: 350px;
+    padding-top: 20px;
+}
+
+.show__right {
+    width: 400px;
+    margin: 0;
+}
+
+.show__image {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #666;
+    overflow: hidden;
+}
+
+.show__image-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+    display: block;
+}
+
+.show__name {
+    font-size: 28px;
+    font-weight: bold;
+    margin: 0 0 2px;
+}
+
+.show__brand {
+    font-size: 14px;
+    margin: 0 0 10px;
+}
+
+.show__price {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 0 0 12px;
+}
+
+.show__price-yen {
+    font-size: 18px;
+    padding-right: 2px;
+}
+
+.show__price-tax {
+    font-size: 14px;
+    font-weight: normal;
+}
+
+.show__counts {
+    display: flex;
+    gap: 35px;
+    align-items: flex-start;
+    margin: 10px 0 14px;
+    padding-left: 20px;
+}
+
+.show__count {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-weight: bold;
+}
+
+.show__count-img,
+.show__icon,
+.show__like-img {
+    width: 28px;
+    height: 28px;
+    object-fit: contain;
+}
+
+.show__like-button {
+    border: none;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+}
+
+.show__like-button.is-disabled {
+    pointer-events: none;
+    opacity: 0.4;
+    cursor: default;
+}
+
+.show__count-number {
+    font-size: 12px;
+}
+
+.show__purchase {
+    margin: 10px 0 22px;
+}
+
+.show__purchase-button {
+    display: block;
+    width: 100%;
+    padding: 10px 0;
+    text-align: center;
+    background: #ff5a5a;
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.show__section {
+    margin-top: 22px;
+}
+
+.show__section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.show__description {
+    font-size: 13px;
+    line-height: 1.8;
+    margin: 0;
+}
+
+.show__info {
+    display: flex;
+    align-items: flex-start;
+    gap: 18px;
+    margin-top: 12px;
+}
+
+.show__info-title {
+    width: 92px;
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+    flex-shrink: 0;
+}
+
+.show__tags {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    min-width: 0;
+}
+
+.show__tag {
+    display: inline-flex;
+    align-items: center;
+    background: #eee;
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 12px;
+    white-space: nowrap;
+}
+
+.show__info-value {
+    font-size: 13px;
+    margin: 0;
+}
+
+.show__comment-area {
+    max-height: 55vh;
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.show__comments {
+    margin-top: 10px;
+}
+
+.show__comment {
+    margin-top: 16px;
+}
+
+.show__comment-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.show__avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #ccc;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.show__avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.show__username {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0;
+}
+
+.show__comment-body {
+    background: #eee;
+    border-radius: 4px;
+    padding: 10px 12px;
+    font-size: 12px;
+    margin: 0;
+}
+
+.show__badge {
+    display: inline-block;
+    padding: 3px 10px;
+    font-size: 10px;
+    font-weight: bold;
+    border-radius: 9999px;
+    background: #ff5a5f;
+    color: #fff;
+    white-space: nowrap;
+}
+
+.show__no-comment {
+    font-size: 12px;
+    color: #666;
+}
+
+.show__post {
+    margin-top: 20px;
+}
+
+.show__post-title {
+    font-size: 13px;
+    font-weight: bold;
+    margin: 0 0 10px;
+}
+
+.show__textarea {
+    width: 100%;
+    height: 150px;
+    border: 2px solid #999;
+    border-radius: 4px;
+    padding: 10px;
+    font-size: 13px;
+    resize: vertical;
+    box-sizing: border-box;
+}
+
+.show__submit {
+    width: 100%;
+    margin-top: 14px;
+    padding: 10px 0;
+    border: none;
+    border-radius: 4px;
+    background: #ff5a5a;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.show-form__error-list {
+    color: red;
+}
+
+.show__purchase-sold {
+    font-size: 30px;
+    margin: 0;
+    color: red;
+}
