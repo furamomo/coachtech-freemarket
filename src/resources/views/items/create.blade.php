@@ -19,7 +19,7 @@
             <div class="create__field">
                 <p class="create__field-title">商品画像</p>
 
-                <div class="create__image">
+                <div class="create__image {{ $errors->has('image') ? 'is-error' : '' }}">
                     <img src="" alt="" class="create__image-preview" id="itemImagePreview">
 
                     <input type="file" name="image" id="itemImageInput" class="create__image-input" accept="image/*"
@@ -47,7 +47,7 @@
                 <div class="create__field">
                     <p class="create__field-title">カテゴリー</p>
 
-                    <div class="create__categories">
+                    <div class="create__categories {{ $errors->has('category_ids') ? 'is-error' : '' }}">
                         @foreach($categories as $category)
                             <label class="create__category">
                                 <input type="checkbox" name="category_ids[]" value="{{ $category->id }}" class="create__category-input" {{ in_array($category->id, old('category_ids', [])) ? 'checked' : '' }}>
@@ -74,7 +74,7 @@
                     </label>
 
                     <div class="create__select-wrapper">
-                        <select name="condition" id="condition" class="create__select" required>
+                        <select name="condition" id="condition" class="create__select u-input {{ $errors->has('condition') ? 'is-error' : '' }}" required>
                             <option class="create__option create__option--default" value="" disabled {{ old('condition') ? '' : 'selected' }} hidden>
                                 選択してください
                             </option>
@@ -104,7 +104,7 @@
 
                 <div class="create__field">
                     <label for="name" class="create__field-title">商品名</label>
-                    <input id="name" name="name" type="text" class="create__input" value="{{ old('name') }}">
+                    <input id="name" name="name" type="text" class="create__input u-input {{ $errors->has('name') ? 'is-error' : '' }}" value="{{ old('name') }}">
 
                     @if ($errors->has('name'))
                         <ul class="create-form__errors">
@@ -124,7 +124,7 @@
 
                 <div class="create__field">
                     <label for="description" class="create__field-title">商品の説明</label>
-                    <textarea id="description" name="description" class="create__textarea">{{ old('description') }}</textarea>
+                    <textarea id="description" name="description" class="create__textarea u-input {{ $errors->has('description') ? 'is-error' : '' }}">{{ old('description') }}</textarea>
 
                     @if ($errors->has('description'))
                         <ul class="create-form__errors">
@@ -139,7 +139,7 @@
 
                 <div class="create__field">
                     <label for="price" class="create__field-title">販売価格</label>
-                    <div class="create__price">
+                    <div class="create__price u-input {{ $errors->has('price') ? 'is-error' : '' }}">
                         <span class="create__price-mark">¥</span>
                         <input id="price" name="price" type="number" class="create__price-input" value="{{ old('price') }}">
                     </div>

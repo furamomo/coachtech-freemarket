@@ -17,17 +17,16 @@
             <form method="POST" action="{{ route('login') }}" class="login-form">
                 @csrf
 
+                @php
+                    $hasAuthError = $errors->has('email') && in_array('ログイン情報が登録されていません', $errors->get('email'), true);
+                @endphp
+
                 {{-- メールアドレス --}}
                 <div class="login-form__group">
                     <label class="login-form__label">メールアドレス</label>
-                    <input
-                        class="login-form__input"
-                        type="text"
-                        name="email"
-                        value="{{ old('email') }}"
-                    >
+                    <input class="login-form__input u-input {{ ($errors->has('email') || $hasAuthError) ? 'is-error' : '' }}" type="text" name="email" value="{{ old('email') }}">
 
-                    @if ($errors->has('email'))
+                    @if ($errors->has('email') && ! $hasAuthError)
                         <ul class="login-form__errors">
                             @foreach ($errors->get('email') as $error)
                                 <li class="login-form__error-list">
@@ -41,11 +40,7 @@
                 {{-- パスワード --}}
                 <div class="login-form__group">
                     <label class="login-form__label">パスワード</label>
-                    <input
-                        class="login-form__input"
-                        type="password"
-                        name="password"
-                    >
+                    <input class="login-form__input u-input {{ ($errors->has('password') || $hasAuthError) ? 'is-error' : '' }}" type="password" name="password">
 
                     @if ($errors->has('password'))
                         <ul class="login-form__errors">
@@ -59,12 +54,12 @@
                 </div>
 
                 {{-- ログイン失敗（認証エラー） --}}
-                @if ($errors->has('login'))
+                @if ($hasAuthError)
                     <ul class="login-form__errors">
-                        @foreach ($errors->get('auth') as $error)
-                            <li class="login-form__error-list">
-                                {{ $error }}
-                            </li>
+                        @foreach ($errors->get('email') as $error)
+                            @if (str_contains($error, 'ログイン情報'))
+                            <li class="login-form__error-list">{{ $error }}</li>
+                            @endif
                         @endforeach
                     </ul>
                 @endif

@@ -17,7 +17,7 @@
                 {{-- ユーザー名 --}}
                 <div class="register-form__group">
                     <label class="register-form__label">ユーザー名</label>
-                    <input class="register-form__input" type="text" name="name" value="{{ old('name') }}">
+                    <input class="register-form__input u-input {{ $errors->has('name') ? 'is-error' : '' }}" type="text" name="name" value="{{ old('name') }}">
                     @if ($errors->has('name'))
                         <ul class="register-form__errors">
                             @foreach ($errors->get('name') as $error)
@@ -32,7 +32,7 @@
                 {{-- メールアドレス --}}
                 <div class="register-form__group">
                     <label class="register-form__label">メールアドレス</label>
-                    <input class="register-form__input" type="text" name="email" value="{{ old('email') }}">
+                    <input class="register-form__input u-input {{ $errors->has('email') ? 'is-error' : '' }}" type="text" name="email" value="{{ old('email') }}">
                     @if ($errors->has('email'))
                         <ul class="register-form__errors">
                             @foreach ($errors->get('email') as $error)
@@ -47,13 +47,13 @@
                 {{-- パスワード --}}
                 <div class="register-form__group">
                     <label class="register-form__label">パスワード</label>
-                    <input class="register-form__input" type="password" name="password">
+                    <input class="register-form__input u-input {{ ($errors->has('password') || $errors->has('password_confirmation')) ? 'is-error' : '' }}" type="password" name="password">
                 </div>
 
                 {{-- 確認用パスワード --}}
                 <div class="register-form__group">
                     <label class="register-form__label">確認用パスワード</label>
-                    <input class="register-form__input" type="password" name="password_confirmation">
+                    <input class="register-form__input u-input {{ ($errors->has('password') || $errors->has('password_confirmation')) ? 'is-error' : '' }}" type="password" name="password_confirmation">
 
                     @if ($errors->has('password') || $errors->has('password_confirmation'))
                         <ul class="register-form__errors">

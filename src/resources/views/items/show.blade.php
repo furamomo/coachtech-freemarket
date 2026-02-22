@@ -138,7 +138,7 @@
 
                         <form action="{{ route('items.comments.store', $item) }}" method="POST" class="show__form">
                             @csrf
-                            <textarea name="content" class="show__textarea">{{ old('content') }}</textarea>
+                            <textarea name="content" class="show__textarea u-input {{ $errors->has('content') ? 'is-error' : '' }}">{{ old('content') }}</textarea>
 
                             @if ($errors->has('content'))
                                 <ul class="show-form__errors">

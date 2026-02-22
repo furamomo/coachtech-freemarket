@@ -33,7 +33,7 @@
                     <h2 class="purchase__group-title">支払い方法</h2>
 
                     <div class="purchase__select-wrapper">
-                        <select name="payment_method" id="payment_method" class="purchase__select" required>
+                        <select name="payment_method" id="payment_method" class="purchase__select u-input {{ $errors->has('payment_method') ? 'is-error' : '' }}" required>
                             <option class="purchase__option purchase__option--default" value="" disabled {{ $selectedPaymentMethod ? '' : 'selected' }} hidden>
                                 選択してください
                             </option>

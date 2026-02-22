@@ -30,7 +30,7 @@
                     <label class="edit-form__label">
                         ユーザー名
                     </label>
-                    <input type="text" class="edit-form__input" name="name" value="{{ old('name', $user->name ?? '') }}">
+                    <input type="text" class="edit-form__input u-input {{ $errors->has('name') ? 'is-error' : '' }}" name="name" value="{{ old('name', $user->name ?? '') }}">
 
                     @if ($errors->has('name'))
                         <ul class="edit-form__errors">
@@ -47,7 +47,7 @@
                     <label class="edit-form__label">
                         郵便番号
                     </label>
-                    <input type="text" class="edit-form__input" name="postal_code" value="{{ old('postal_code', $profile->postal_code ?? '') }}">
+                    <input type="text" class="edit-form__input u-input {{ $errors->has('postal_code') ? 'is-error' : '' }}" name="postal_code" value="{{ old('postal_code', $profile->postal_code ?? '') }}">
 
                     @if ($errors->has('postal_code'))
                         <ul class="edit-form__errors">
@@ -64,7 +64,7 @@
                     <label class="edit-form__label">
                         住所
                     </label>
-                    <input type="text" class="edit-form__input" name="address" value="{{ old('address', $profile->address ?? '') }}">
+                    <input type="text" class="edit-form__input u-input {{ $errors->has('address') ? 'is-error' : '' }}" name="address" value="{{ old('address', $profile->address ?? '') }}">
 
                     @if ($errors->has('address'))
                         <ul class="edit-form__errors">
@@ -96,4 +96,5 @@
     </div>
 
     <script src="{{ asset('js/profile.js') }}"></script>
+
 @endsection
